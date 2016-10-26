@@ -7,7 +7,6 @@
 .gwrap {
 	max-width: 1280px;
 	margin: 0 auto;
-	background: blue;
 }
 .lside {
 	width: 67%;
@@ -19,4 +18,11 @@
 	max-width: 420px;
 	.col-cnt {margin: 0 30px; background: green;}
 }
-.lside, .rside {float: left;}
+.lside, .rside {float: right;}
+
+@media only screen and (max-width: 480px) {
+	.lside, .rside {
+		max-width: 100%;
+		width: 100%;
+	}
+}
