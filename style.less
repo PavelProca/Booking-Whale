@@ -2,27 +2,78 @@
 	margin: 0;
 	padding: 0;
 	overflow: auto;
+	text-decoration: none;
 }
-
-.gwrap {
+// =================== content position styles ===================
+.gwrap { // global wrapper
 	max-width: 1280px;
 	margin: 0 auto;
 }
-.lside {
+.lside { // left side of the page
 	width: 67%;
 	max-width: 860px;
-	.col-cnt {margin: 0 50px; background: red;}
+	.col-cnt {
+		margin: 0 50px;
+		background: red;
+	}
 }
-.rside {
+.rside { // right side of the page
 	width: 33%;
 	max-width: 420px;
-	.col-cnt {margin: 0 30px; background: green;}
+	.col-cnt {
+		margin: 0 30px;
+		.marginator {
+			width: 100%;
+			height: 50px;
+		}
+		.row {margin-bottom: 5px;}
+	}
 }
-.lside, .rside {float: right;}
+.lside, .rside {
+	height: 100vh;
+	float: right;
+}
+// =================== stiles for right side content ===================
+.totals {
+	.totals-cnt {
+		border-top: 1px solid gray;
+		border-bottom: 1px solid gray;
+		margin: 26px 0;
+		padding: 10px;
+	}
+}
+.txtl {float: left;}
+.txtr {float: right;}
 
+.help {
+	h2 {margin-bottom: 26px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// =================== MOBILE STYLES ===================
 @media only screen and (max-width: 480px) {
 	.lside, .rside {
 		max-width: 100%;
 		width: 100%;
+		height: auto;
 	}
+	.lside {height: 100vh;}
 }
