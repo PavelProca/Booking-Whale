@@ -4,6 +4,8 @@
 	overflow: auto;
 	text-decoration: none;
 }
+.align-left {float: left;}
+.align-right {float: right;}
 // =================== content position styles ===================
 .gwrap { // global wrapper
 	max-width: 1280px;
@@ -12,10 +14,7 @@
 .lside { // left side of the page
 	width: 67%;
 	max-width: 860px;
-	.col-cnt {
-		margin: 0 50px;
-		background: red;
-	}
+	.col-cnt {margin: 0 50px;}
 }
 .rside { // right side of the page
 	width: 33%;
@@ -48,15 +47,59 @@
 .help {
 	h2 {margin-bottom: 26px;}
 }
+// =================== header styles ===================
 
+.header {
+	.align-right {line-height: 47px;}
+}
 
+form {
+	div {
+		position: relative;
+		padding-top: 22px;
+	}
+	input {
+		width: 100%;
+		padding: 10px 0;
+		box-sizing: border-box;
+		border: none;
+		border-bottom: 1px solid #ccc;
+		background: transparent;
+		&:focus {
+			outline: none;
+			border-bottom-color: blue;
+		}
+		&:focus + label[for^='loc-'] {top: 18%;}
+	}
+	label[for^='loc-'] {
+		position: absolute;
+		top: 52%;
+		left: 0;
+		cursor: text;
+		transition: .2s ease-out;
+	}
+	.marginator {width: 4%; height: 10px;}
+	.bhalf {width: 68%;}
+	.shalf {
+		width: 28%;
+	}
+}
 
+.buttons {
+	padding-top: 40px;
+	.align-right {width: 40%;}
+	.align-left {line-height: 50px;}
+}
 
-
-
-
-
-
+.btn {
+	width: 100%;
+	height: 50px;
+    border-radius: 50px;
+    background-color: blue;
+    border: 1px solid #dadada;
+    cursor: pointer;
+    outline: none;
+}
 
 
 
@@ -69,11 +112,12 @@
 
 
 // =================== MOBILE STYLES ===================
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 625px) {
 	.lside, .rside {
 		max-width: 100%;
 		width: 100%;
 		height: auto;
+		.col-cnt {margin: 0 20px;}
 	}
 	.lside {height: 100vh;}
 }
