@@ -21,9 +21,12 @@
 body {
 	color: @primary-text;
 	font: 14px @gen-font-family;
+	font-weight: 400;
+	background: linear-gradient(to right, #fff 70%, @grey-background 30%);
 }
 h1, h2, h3, h4, h5, h6 {
 	color: @titles;
+	font-weight: 400;
 }
 a, a:hover, a:active, a:visited {
 	color: @theme-color;
@@ -40,11 +43,13 @@ label {color: @third-text;}
 .lside { // left side of the page
 	width: 67%;
 	max-width: 860px;
+	background: #fff;
 	.col-cnt {margin: 0 50px;}
 }
 .rside { // right side of the page
 	width: 33%;
 	max-width: 420px;
+	background: @grey-background;
 	.col-cnt {
 		margin: 0 30px;
 		.marginator {
