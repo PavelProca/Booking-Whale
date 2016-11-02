@@ -1,9 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@gen-font-family: 'Roboto', sans-serif; // main font
+@theme-color: #0d99b7;
+@errors: #f95446;
+@grey-background: #f6f7f8;
+@borders-dividers: #dadada;
+@warnings: #fed455;
+@success: #a0c263;
+@titles: #000;
+@primary-text: #333;
+@secondary-text: #666;
+@third-text: #999;
+
 * {
 	margin: 0;
 	padding: 0;
 	overflow: auto;
 	text-decoration: none;
 }
+body {
+	color: @primary-text;
+	font: 14px @gen-font-family;
+}
+h1, h2, h3, h4, h5, h6 {
+	color: @titles;
+}
+a, a:hover, a:active, a:visited {
+	color: @theme-color;
+}
+label {color: @third-text;}
+
 .align-left {float: left;}
 .align-right {float: right;}
 // =================== content position styles ===================
@@ -35,8 +61,8 @@
 // =================== stiles for right side content ===================
 .totals {
 	.totals-cnt {
-		border-top: 1px solid gray;
-		border-bottom: 1px solid gray;
+		border-top: 1px solid @borders-dividers;
+		border-bottom: 1px solid @borders-dividers;
 		margin: 26px 0;
 		padding: 10px;
 	}
@@ -53,6 +79,13 @@
 	.align-right {line-height: 47px;}
 }
 
+.smenu-item {
+	display: inline-block;
+	text-align: center;
+	img {height: 50px; width: 20px;}
+	&.separator {padding-bottom: 15px;}
+}
+
 form {
 	div {
 		position: relative;
@@ -63,13 +96,16 @@ form {
 		padding: 10px 0;
 		box-sizing: border-box;
 		border: none;
-		border-bottom: 1px solid #ccc;
+		border-bottom: 1px solid @borders-dividers;
 		background: transparent;
 		&:focus {
 			outline: none;
-			border-bottom-color: blue;
+			border-bottom-color: @theme-color;
 		}
-		&:focus + label[for^='loc-'] {top: 18%;}
+		&:focus + label[for^='loc-'] {
+			top: 18%;
+			color: @theme-color;
+		}
 	}
 	label[for^='loc-'] {
 		position: absolute;
@@ -95,10 +131,11 @@ form {
 	width: 100%;
 	height: 50px;
     border-radius: 50px;
-    background-color: blue;
-    border: 1px solid #dadada;
+    background-color: @theme-color;
+    border: 1px solid @theme-color;
     cursor: pointer;
     outline: none;
+    color: #fff;
 }
 
 
