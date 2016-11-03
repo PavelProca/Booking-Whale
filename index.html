@@ -79,21 +79,25 @@
 				<div class="info">
 					<h2>Where will we come?</h2>
 					<form>
-						<div><input type="text" id="loc-adress"><label for="loc-adress">Address</label></div>
-						<div><input type="text" id="loc-suite"><label for="loc-suite">Suite, Apt, etc</label></div>
-						<div><input type="text" id="loc-city"><label for="loc-city">City</label></div>
+						<div><input type="text" id="loc-adress" required autocomplete="off"><label for="loc-adress">Address</label></div>
+						<div><input type="text" id="loc-suite" required autocomplete="off"><label for="loc-suite">Suite, Apt, etc</label></div>
+						<div><input type="text" id="loc-city" required autocomplete="off"><label for="loc-city">City</label></div>
 						<div class="bhalf align-left">
-							<input type="text" id="loc-state"><label for="loc-state">State</label>
+							<select id="loc-state" value="State">
+								<option>USA</option>
+								<option>Russia</option>
+								<option>Moldova</option>
+							</select>
 						</div>
 						<div class="marginator align-left"></div>
 						<div class="shalf align-left">
-							<input type="text" id="loc-zip"><label for="loc-zip">ZIP code</label>
+							<input type="number" id="loc-zip" min="0" required autocomplete="off"><label for="loc-zip">ZIP code</label>
 						</div>
 					</form>
 				</div>
 				<div class="buttons">
 					<div class="align-left">
-						<p>&#60; Login</p>
+						<p><a href="#">&#60; Login</a></p>
 					</div>
 					<div class="align-right">
 						<button class="btn">Next</button>

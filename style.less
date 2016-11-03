@@ -63,6 +63,7 @@ label {color: @third-text;}
 	height: 100vh;
 	float: right;
 }
+.col-cnt {padding-top: 40px;}
 // =================== stiles for right side content ===================
 .totals {
 	.totals-cnt {
@@ -96,19 +97,20 @@ form {
 		position: relative;
 		padding-top: 22px;
 	}
-	input {
+	input, select {
 		width: 100%;
 		padding: 10px 0;
 		box-sizing: border-box;
 		border: none;
 		border-bottom: 1px solid @borders-dividers;
-		background: transparent;
-		&:focus {
+		background: transparent;	
+		&:focus, &:valid {
 			outline: none;
 			border-bottom-color: @theme-color;
 		}
-		&:focus + label[for^='loc-'] {
+		&:focus + label[for^='loc-'], &:valid + label[for^='loc-']{
 			top: 18%;
+			font-size: 12px;
 			color: @theme-color;
 		}
 	}
@@ -119,6 +121,7 @@ form {
 		cursor: text;
 		transition: .2s ease-out;
 	}
+	select {height: 53px;}
 	.marginator {width: 4%; height: 10px;}
 	.bhalf {width: 68%;}
 	.shalf {
@@ -141,6 +144,7 @@ form {
     cursor: pointer;
     outline: none;
     color: #fff;
+    font-size: 21px;
 }
 
 
