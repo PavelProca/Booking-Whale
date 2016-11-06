@@ -79,7 +79,12 @@ label {color: @third-text;}
 .help {
 	h2 {margin-bottom: 26px;}
 }
+.arrow {
+	display: none;
+}
 // =================== header styles ===================
+
+.header.header-hidden {display: none;}
 
 .header {
 	.align-right {line-height: 47px;}
@@ -147,10 +152,7 @@ form {
     font-size: 21px;
 }
 
-
-
-
-
+.hidden {display: none;}
 
 
 
@@ -159,11 +161,42 @@ form {
 
 // =================== MOBILE STYLES ===================
 @media only screen and (max-width: 625px) {
+	.header {display: none;}
+	.header.header-hidden {
+		display: block;
+		background: #fff;
+		padding: 10px 20px;
+	}
 	.lside, .rside {
 		max-width: 100%;
 		width: 100%;
 		height: auto;
+		float: none;
 		.col-cnt {margin: 0 20px;}
 	}
 	.lside {height: 100vh;}
+	.rside {
+			border-top: 1px solid @borders-dividers;
+			border-bottom: 1px solid @borders-dividers;
+		.col-cnt {
+			padding: 18px 0;
+			.txtr.hidden {display: block;}
+		}
+	}
+	.totals {
+		h2:first-child {
+			position: relative;
+			color: @theme-color;
+			padding-right: 26px;
+			.arrow {
+				display: block;
+				position: absolute;
+				border-left: 7px solid transparent;
+  				border-right: 7px solid transparent;
+  				border-top: 10px solid @theme-color;
+				top: 10px;
+				left: 105px;
+			}
+		}
+	}
 }
