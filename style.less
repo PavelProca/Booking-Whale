@@ -31,6 +31,7 @@ h1, h2, h3, h4, h5, h6 {
 a, a:hover, a:active, a:visited {
 	color: @theme-color;
 }
+input {font-size: inherit;}
 label {color: @third-text;}
 
 .align-left {float: left;}
@@ -70,7 +71,7 @@ label {color: @third-text;}
 		border-top: 1px solid @borders-dividers;
 		border-bottom: 1px solid @borders-dividers;
 		margin: 26px 0;
-		padding: 10px;
+		padding: 10px 0;
 	}
 }
 .txtl {float: left;}
@@ -151,8 +152,8 @@ form {
     color: #fff;
     font-size: 21px;
 }
-
-.hidden {display: none;}
+.txtr.hidden {display: none;}
+.hidden {display: block;}
 
 
 
@@ -188,6 +189,7 @@ form {
 			position: relative;
 			color: @theme-color;
 			padding-right: 26px;
+			cursor: pointer;
 			.arrow {
 				display: block;
 				position: absolute;
@@ -197,6 +199,21 @@ form {
 				top: 10px;
 				left: 105px;
 			}
+		}
+	}
+	.hidden {display: none;}
+	form {
+		.marginator {display: none;}
+		.bhalf, .shalf {
+			float: none;
+			width: 100%;
+		}
+	}
+	.buttons {
+		.align-left, .align-right {
+			float: none;
+			width: 100%;
+			text-align: center;
 		}
 	}
 }
