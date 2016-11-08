@@ -91,11 +91,20 @@ label {color: @third-text;}
 	.align-right {line-height: 47px;}
 }
 
+.smenu {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	padding: 35px 0;
+}
+
 .smenu-item {
-	display: inline-block;
 	text-align: center;
-	img {height: 50px; width: 20px;}
-	&.separator {padding-bottom: 15px;}
+	&:first-child {border-bottom: 2px solid @theme-color;}
+	img {width: 24px; height: 24px;}
+	&.separator {
+		img {width: 10px;}
+	}
 }
 
 form {
@@ -161,7 +170,7 @@ form {
 
 
 // =================== MOBILE STYLES ===================
-@media only screen and (max-width: 625px) {
+@media only screen and (max-width: 780px) {
 	.header {display: none;}
 	.header.header-hidden {
 		display: block;
@@ -175,7 +184,10 @@ form {
 		float: none;
 		.col-cnt {margin: 0 20px;}
 	}
-	.lside {height: 100vh;}
+	.lside {
+		height: 100vh;
+		.col-cnt {padding-top: 0;}
+	}
 	.rside {
 			border-top: 1px solid @borders-dividers;
 			border-bottom: 1px solid @borders-dividers;
@@ -190,18 +202,22 @@ form {
 			color: @theme-color;
 			padding-right: 26px;
 			cursor: pointer;
+			font-size: 16px;
 			.arrow {
 				display: block;
 				position: absolute;
-				border-left: 7px solid transparent;
-  				border-right: 7px solid transparent;
-  				border-top: 10px solid @theme-color;
-				top: 10px;
-				left: 105px;
+				border-left: 6px solid transparent;
+  				border-right: 6px solid transparent;
+  				border-top: 8px solid @theme-color;
+				top: 7px;
+				left: 80px;
 			}
 		}
 	}
 	.hidden {display: none;}
+	.smenu-item {
+		.item-name {display: none;}
+	}
 	form {
 		.marginator {display: none;}
 		.bhalf, .shalf {
