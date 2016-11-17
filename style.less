@@ -146,6 +146,26 @@ form {
 		transition: .2s ease-out;
 	}
 	select {height: 53px;}
+	.selector {
+		margin: 0;
+		padding: 0;
+		&:after {
+			position:absolute;
+			content: url(svg/arrow_down_24px.svg);
+			top: 0;
+			right: 0;
+			width: 20px;
+			height: 52px;
+			padding-top: 19px;
+			z-index: 1;
+			box-sizing: border-box;
+			text-align: center;
+			color:#000;
+			pointer-events: none;
+			background: #fff;
+		}
+		option {background: transparent;}
+	}
 	.marginator {width: 4%; height: 10px;}
 	.bhalf {width: 68%;}
 	.shalf {
@@ -243,19 +263,9 @@ form {
 	}
 }
 
-.rad(@number) {
-	-o-border-radius: @number;
-	-op-border-radius: @number;
-	-xv-border-radius: @number;
-	-moz-border-radius: @number;
-	-ms-border-radius: @number;
-	-khtml-border-radius: @number;
-	-webkit-border-radius: @number;
-}
 
-.tab {
-	width: 50px;
-	height: 50px;
-	border: 10px solid red;
-	.rad(50%);
-}
+
+
+
+
+
