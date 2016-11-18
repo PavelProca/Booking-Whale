@@ -15,8 +15,8 @@
 * {
 	margin: 0;
 	padding: 0;
-	overflow: auto;
 	text-decoration: none;
+	box-sizing: border-box;
 }
 body {
 	color: @primary-text;
@@ -36,7 +36,15 @@ label {color: @third-text;}
 
 .align-left {float: left;}
 .align-right {float: right;}
-// =================== content position styles ===================
+.clear-fix {
+	width: 0;
+	height: 0;
+	padding: 0;
+	margin: 0;
+	clear: both;
+}
+path, g[id^="arrow_right"] {fill: @third-text;}
+// =================== CONTENT POSITION ===================
 .gwrap { // global wrapper
 	max-width: 1280px;
 	margin: 0 auto;
@@ -65,7 +73,7 @@ label {color: @third-text;}
 	float: right;
 }
 .col-cnt {padding-top: 40px;}
-// =================== stiles for right side content ===================
+// =================== RIGHT SIDE CONTENT ===================
 .totals {
 	.totals-cnt {
 		border-top: 1px solid @borders-dividers;
@@ -83,28 +91,31 @@ label {color: @third-text;}
 .arrow {
 	display: none;
 }
-// =================== header styles ===================
+// =================== HEADER ===================
 
 .header.header-hidden {display: none;}
 
 .header {
 	.align-right {line-height: 47px;}
 	.log-wrap {
-		display: inline-block;
-		line-height: 18px;
+		position: relative;
+		top: -4px;
 	}
 	a #Group #Shape:first-child {fill: @theme-color;}
 }
 
+// =================== STEPS ===================
 .smenu {
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: space-between;
 	padding: 35px 0;
+	list-style: none;
 }
 
 .smenu-item {
 	text-align: center;
+	color: @third-text;
 	&:first-child {
 		border-bottom: 2px solid @theme-color;
 		color: @theme-color;
@@ -115,16 +126,16 @@ label {color: @third-text;}
 		img {width: 10px;}
 	}
 }
-
+// =================== USER INFO ===================
 form {
 	div {
 		position: relative;
 		padding-top: 22px;
 	}
-	input, select {
+	input {
 		width: 100%;
+		height: 54px;
 		padding: 10px 0;
-		box-sizing: border-box;
 		border: none;
 		border-bottom: 1px solid @borders-dividers;
 		background: transparent;	
@@ -145,33 +156,53 @@ form {
 		cursor: text;
 		transition: .2s ease-out;
 	}
-	select {height: 53px;}
-	.selector {
-		margin: 0;
-		padding: 0;
-		&:after {
-			position:absolute;
-			content: url(svg/arrow_down_24px.svg);
-			top: 0;
-			right: 0;
-			width: 20px;
-			height: 52px;
-			padding-top: 19px;
-			z-index: 1;
-			box-sizing: border-box;
-			text-align: center;
-			color:#000;
-			pointer-events: none;
-			background: #fff;
-		}
-		option {background: transparent;}
-	}
 	.marginator {width: 4%; height: 10px;}
 	.bhalf {width: 68%;}
 	.shalf {
 		width: 28%;
 	}
 }
+// =================== DROPDOWN ===================
+.dropdown {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	label {
+		display: block;
+		height: 54px;
+		line-height: 54px;
+		color: @primary-text;
+		cursor: pointer;
+		border-bottom: 1px solid @borders-dividers;
+	}
+	ul {
+		list-style: none;
+		position: absolute;
+		width: 100%;
+		li {
+			padding: 0px 16px;
+			background: #fff;
+			color: @primary-text;
+			height: 0px;
+			overflow: hidden;
+			cursor: pointer;
+			transition: height 0.1s linear 0s;
+			&:hover, &.selected {
+				background: @grey-background;
+				color: @primary-text;
+				border-left: 2px solid @theme-color !important;
+			}
+		}
+	}
+}
+.dropdown.clicked:hover ul li {
+	padding: 8px 16px;
+	height: 34px;
+	border: 1px solid @grey-background;
+	border-top: none;
+}
+.dropdown.chosen label{border-bottom: 1px solid @theme-color;}
+// =================== BUTTONS AREA ===================
 
 .buttons {
 	padding-top: 40px;
@@ -190,6 +221,14 @@ form {
     color: #fff;
     font-size: 21px;
 }
+
+a.back {
+	#Shape:first-child {
+		fill: @theme-color;
+	}
+}
+
+
 .txtr.hidden {display: none;}
 .hidden {display: block;}
 
@@ -226,6 +265,7 @@ form {
 		}
 	}
 	.totals {
+		div:first-child {overflow: auto;}
 		h2:first-child {
 			position: relative;
 			color: @theme-color;
@@ -262,9 +302,6 @@ form {
 		}
 	}
 }
-
-
-
 
 
 
