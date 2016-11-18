@@ -132,7 +132,7 @@ form {
 		position: relative;
 		padding-top: 22px;
 	}
-	input {
+	input, .mobile-drop {
 		width: 100%;
 		height: 54px;
 		padding: 10px 0;
@@ -194,12 +194,18 @@ form {
 			}
 		}
 	}
-}
-.dropdown.clicked:hover ul li {
-	padding: 8px 16px;
-	height: 34px;
-	border: 1px solid @grey-background;
-	border-top: none;
+	&.open ul li {
+		padding: 8px 16px;
+		height: 34px;
+		border: 1px solid @grey-background;
+		border-top: none;
+	}
+	svg {
+		position: absolute;
+		top: 25px;
+		right: 0;
+		cursor: pointer;
+	}
 }
 .dropdown.chosen label{border-bottom: 1px solid @theme-color;}
 // =================== BUTTONS AREA ===================
@@ -239,6 +245,7 @@ a.back {
 
 // =================== MOBILE STYLES ===================
 @media only screen and (max-width: 780px) {
+	body {background: #fff;}
 	.header {display: none;}
 	.header.header-hidden {
 		display: block;
@@ -293,6 +300,8 @@ a.back {
 			float: none;
 			width: 100%;
 		}
+		.dropdown {display: none;}
+		.mobile-drop {display: block;}
 	}
 	.buttons {
 		.align-left, .align-right {

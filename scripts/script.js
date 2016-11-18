@@ -3,9 +3,6 @@ function change() {
 	document.getElementById("mob-dropdown1").classList.toggle('hidden');
 	document.getElementById("mob-dropdown2").classList.toggle('hidden');
 }
-function showdrop() {
-	document.getElementById("statedrop").classList.toggle('clicked');
-}
 $(function() {
   $('.dropdown ul li').on('click', function() {
     var label = $(this).parent().parent().children('label');
@@ -18,5 +15,9 @@ $(function() {
 		document.getElementById("statedrop").classList.toggle('chosen');
 		i=5;
     }
+  });
+  
+  $('.dropdown').on('click', function() {
+  	$(this).toggleClass('open');
   });
 });
