@@ -17,10 +17,11 @@
 	padding: 0;
 	text-decoration: none;
 	box-sizing: border-box;
+	font-family:  @gen-font-family;
 }
 body {
 	color: @primary-text;
-	font: 14px @gen-font-family;
+	font-size: 14px;
 	font-weight: 400;
 	background: linear-gradient(to right, #fff 70%, @grey-background 30%);
 }
@@ -279,16 +280,8 @@ a.back {
 			color: @theme-color;
 			padding-right: 26px;
 			cursor: pointer;
-			font-size: 16px;
-			.arrow {
-				display: block;
-				position: absolute;
-				border-left: 6px solid transparent;
-  				border-right: 6px solid transparent;
-  				border-top: 8px solid @theme-color;
-				top: 7px;
-				left: 80px;
-			}
+			font-size: 14px;
+			#Shape:first-child {fill: @theme-color;}
 		}
 	}
 	.hidden {display: none;}
