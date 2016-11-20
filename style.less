@@ -18,6 +18,7 @@
 	text-decoration: none;
 	box-sizing: border-box;
 	font-family:  @gen-font-family;
+	border-radius: 0;
 }
 body {
 	color: @primary-text;
@@ -47,26 +48,29 @@ label {color: @third-text;}
 path, g[id^="arrow_right"] {fill: @third-text;}
 // =================== CONTENT POSITION ===================
 .gwrap { // global wrapper
-	max-width: 1280px;
+	max-width: 1300px;
 	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	flex-direction: row-reverse;
 }
 .lside { // left side of the page
-	width: 67%;
+	width: 100%;
 	max-width: 860px;
 	background: #fff;
 	.col-cnt {margin: 0 50px;}
 }
 .rside { // right side of the page
-	width: 33%;
-	max-width: 420px;
+	width: 100%;
+	max-width: 440px;
 	background: @grey-background;
 	.col-cnt {
-		margin: 0 30px;
+		margin: 0 50px 0 30px;
 		.marginator {
 			width: 100%;
 			height: 50px;
 		}
-		.row {margin-bottom: 5px;}
+		.row {margin-bottom: 15px;}
 	}
 }
 .lside, .rside {
@@ -76,18 +80,19 @@ path, g[id^="arrow_right"] {fill: @third-text;}
 .col-cnt {padding-top: 40px;}
 // =================== RIGHT SIDE CONTENT ===================
 .totals {
+	h2:first-child {margin-top: 5px;}
 	.totals-cnt {
 		border-top: 1px solid @borders-dividers;
 		border-bottom: 1px solid @borders-dividers;
-		margin: 26px 0;
-		padding: 10px 0;
+		margin: 23px 0;
+		padding-top: 19px;
 	}
 }
 .txtl {float: left;}
 .txtr {float: right;}
 
 .help {
-	h2 {margin-bottom: 26px;}
+	h2 {margin-bottom: 10px;}
 }
 .arrow {
 	display: none;
@@ -109,8 +114,8 @@ path, g[id^="arrow_right"] {fill: @third-text;}
 .smenu {
 	display: flex;
 	flex-flow: row nowrap;
-	justify-content: space-between;
-	padding: 35px 0;
+	justify-content: space-around;
+	padding: 66px 0 60px 0;
 	list-style: none;
 }
 
@@ -126,21 +131,23 @@ path, g[id^="arrow_right"] {fill: @third-text;}
 	&.separator {
 		img {width: 10px;}
 	}
+	.item-name {margin: 7px 0;}
 }
 // =================== USER INFO ===================
 form {
 	div {
 		position: relative;
-		padding-top: 22px;
+		padding-top: 18px;
 	}
 	input, .mobile-drop {
 		width: 100%;
-		height: 54px;
-		padding: 10px 0;
+		height: 10px;
+		padding: 20px 0;
 		border: none;
 		border-bottom: 1px solid @borders-dividers;
-		background: transparent;	
-		&:focus, &:valid {
+		background: transparent;
+		box-sizing: content-box;	
+		&:focus {
 			outline: none;
 			border-bottom-color: @theme-color;
 		}
@@ -158,10 +165,8 @@ form {
 		transition: .2s ease-out;
 	}
 	.marginator {width: 4%; height: 10px;}
-	.bhalf {width: 68%;}
-	.shalf {
-		width: 28%;
-	}
+	.bhalf {width: 62%;}
+	.shalf {width: 34%;}
 }
 // =================== DROPDOWN ===================
 .mobile-drop {display: none;}
@@ -171,8 +176,8 @@ form {
 	margin: 0;
 	label {
 		display: block;
-		height: 54px;
-		line-height: 54px;
+		height: 50px;
+		line-height: 50px;
 		color: @primary-text;
 		cursor: pointer;
 		border-bottom: 1px solid @borders-dividers;
@@ -209,11 +214,11 @@ form {
 		cursor: pointer;
 	}
 }
-.dropdown.chosen label{border-bottom: 1px solid @theme-color;}
+// .dropdown.chosen label{border-bottom: 1px solid @theme-color;}
 // =================== BUTTONS AREA ===================
 
 .buttons {
-	padding-top: 40px;
+	padding-top: 75px;
 	.align-right {width: 40%;}
 	.align-left {line-height: 50px;}
 }
@@ -237,7 +242,7 @@ a.back {
 }
 
 
-.txtr.hidden {display: none;}
+.txtr.hidden, .arrow {display: none;}
 .hidden {display: block;}
 
 
@@ -248,11 +253,17 @@ a.back {
 // =================== MOBILE STYLES ===================
 @media only screen and (max-width: 780px) {
 	body {background: #fff;}
-	.header {display: none;}
+
+	.gwrap, .header.header-hidden, .rside .col-cnt .txtr.hidden, form .mobile-drop {display: block;}
+	.arrow {display: inline-block;}
+
+	.header, form .marginator, .smenu-item .item-name, 
+	form .dropdown, .hidden {display: none;}
+
 	.header.header-hidden {
-		display: block;
 		background: #fff;
-		padding: 10px 20px;
+		padding: 13px 20px 0 20px;
+		img {height: 25px;}
 	}
 	.lside, .rside {
 		max-width: 100%;
@@ -269,8 +280,7 @@ a.back {
 			border-top: 1px solid @borders-dividers;
 			border-bottom: 1px solid @borders-dividers;
 		.col-cnt {
-			padding: 18px 0;
-			.txtr.hidden {display: block;}
+			padding: 10px 0;
 		}
 	}
 	.totals {
@@ -284,26 +294,28 @@ a.back {
 			#Shape:first-child {fill: @theme-color;}
 		}
 	}
-	.hidden {display: none;}
-	.smenu-item {
-		.item-name {display: none;}
+	.smenu {
+		padding: 20px 0 17px 0;
+		justify-content: space-between;
 	}
 	form {
-		.marginator {display: none;}
 		.bhalf, .shalf {
 			float: none;
 			width: 100%;
 		}
-		.dropdown {display: none;}
-		.mobile-drop {display: block;}
 	}
 	.buttons {
+		padding-top: 35px;
 		.align-left, .align-right {
 			float: none;
 			width: 100%;
 			text-align: center;
 		}
 	}
+
+
+
+
 }
 
 

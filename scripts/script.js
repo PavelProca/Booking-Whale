@@ -12,8 +12,8 @@ $(function() {
     $(this).parent().children('.selected').removeClass('selected');
     $(this).addClass('selected');
     while (i<1) {
-		document.getElementById("statedrop").classList.toggle('chosen');
-		i=5;
+		  document.getElementById("statedrop").classList.toggle('chosen');
+		  i=5;
     }
   });
   
