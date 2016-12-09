@@ -140,18 +140,15 @@ path, g[id^="arrow_right"] {fill: @third-text;}
 	margin-bottom: 30px;
 	border: 1px solid @errors;
 	border-radius: 5px;
-	svg, p {display: inline-block;}
-	svg {
-		position: relative;
-		top: 1px;
-		left: 0;
+	overflow: auto;
+	background: #fef9f9;
+	div:first-child {
+		float: left;
 		margin-right: 15px;
 		path {fill: @errors;}
 	}
-	p {
-		position: relative;
-		top: -4px;
-		padding-top: 10px;
+	div:last-child {
+		padding-top: 2px;
 	}
 }
 .area.error {display: block !important;}
@@ -360,19 +357,23 @@ a.back {
 	position: absolute;
 	display: none;
 	float: right;
-	right: 10px;
-	bottom: -35px;
+	right: 0;
+	bottom: -25px;
 	margin: 0;
 	padding: 0;
 	z-index: 1;
 	& div:first-child {
 		position: absolute;
-		top: -30px;
-		right: 14px;
-		path {fill: @errors;}
+		top: -25px;
+		right: 16px;
+		svg {
+			width: 16px;
+			height: 16px;
+			path {fill: @errors;}
+		}
 	}
 	& div:last-child {
-		padding: 12px;
+		padding: 8px 12px;
 		box-sizing: border-box;
 		border-radius: 3px;
 		background: @errors;
@@ -383,11 +384,11 @@ a.back {
 			content: '';
 			width: 0;
   			height: 0;
-  			top: -25px;
-  			left: -6px;
-  			border-left: 5px solid transparent;
-  			border-right: 5px solid transparent;
-  			border-bottom: 5px solid @errors;
+  			top: -21px;
+  			left: -7px;
+  			border-left: 4px solid transparent;
+  			border-right: 4px solid transparent;
+  			border-bottom: 4px solid @errors;
 		}
 	}
 }
