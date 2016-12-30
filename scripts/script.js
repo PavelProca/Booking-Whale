@@ -17,6 +17,7 @@ $(function() {
     $(this).toggleClass('open');
   });
 });
+
 function change() {
 	document.getElementById("mob-dropdown1").classList.toggle('hidden');
 	document.getElementById("mob-dropdown2").classList.toggle('hidden');
@@ -25,20 +26,6 @@ function globError() {
   document.getElementById("error-block").classList.toggle('error');
 }
 
-/*
-var form  = document.getElementsByTagName('form')[0];
-var field = document.querySelectorAll('input[class^="loc-"]');
-var error = document.querySelectorAll('.error');
-
-form.addEventListener("submit", function (event) {
-  for (var i=0; i < 3; i++) {
-    if (field[i].value == 0) {
-      error[i].className = "error active";
-      event.preventDefault();
-    }
-  }
-}, false);
-*/
 var form  = document.getElementsByTagName('form')[0];
 var field = document.querySelectorAll('input[name="req-field"]');
 var error = document.querySelectorAll('.loc-error');

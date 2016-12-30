@@ -273,7 +273,7 @@
 					<h2>Where will we come?</h2>
 					<form id="info" novalidate>
 						<div>
-							<input type="text" id="loc-adress" name="req-field" required autocomplete="off">
+							<input type="text" id="loc-adress" name="req-field" required autocomplete="off" onFocus="geolocate()" placeholder=" ">
 							<label for="loc-adress">Address <span class="req">*</span></label>
 							<!-- LOCAL ERROR -->
 							<div class="loc-error" aria-live="polite">
@@ -301,7 +301,7 @@
 						</div>
 						
 						<div>
-							<input type="text" id="loc-city" name="req-field" required autocomplete="off">
+							<input type="text" id="locality" class="loc-city" name="req-field" required autocomplete="off">
 							<label for="loc-city">City <span class="req">*</span></label>
 							<!-- LOCAL ERROR -->
 							<div class="loc-error" aria-live="polite">
@@ -325,11 +325,12 @@
 
 						<div class="bhalf align-left">
 							<div class="dropdown" id="statedrop" onClick="showdrop()">
-								<label data-value="">State</label>
+								<label id="administrative_area_level_1" data-value="" disabled="true">State</label>
+							<!--	<input id="administrative_area_level_1"> -->
 								<ul>
 									<li data-value="1">California</li>
 									<li data-value="2">Alaska</li>
-									<li data-value="3">Colorado</li>
+									<li data-value="3" >Colorado</li>
 								</ul>
 								<svg width="12px" height="8px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     								<g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -363,7 +364,8 @@
 						</div>
 						<div class="marginator align-left"></div>
 						<div class="shalf align-left">
-							<input type="tel" id="loc-zip" name="req-field" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required autocomplete="off"><label for="loc-zip">ZIP code <span class="req">*</span></label>
+							<input type="tel" class="loc-zip" name="req-field" oninput="this.value = this.value.replace(/[^0-9]/g, '')" required autocomplete="off" id="postal_code"><label for="loc-zip">ZIP code <span class="req">*</span></label>
+							
 							<!-- LOCAL ERROR -->
 							<div class="loc-error" aria-live="polite">
 								<div>
@@ -412,5 +414,75 @@
 			</div>
 		</div>
 	</div>
+	<script>
+// This example displays an address form, using the autocomplete feature
+// of the Google Places API to help users fill in the information.
+
+var placeSearch, autocomplete;
+var componentForm = {
+  locality: 'long_name',
+  administrative_area_level_1: 'short_name',
+  postal_code: 'short_name'
+};
+
+function initAutocomplete() {
+  // Create the autocomplete object, restricting the search to geographical
+  // location types.
+  autocomplete = new google.maps.places.Autocomplete(
+      /** @type {!HTMLInputElement} */(document.getElementById('loc-adress')),
+      {types: ['geocode']});
+
+  // When the user selects an address from the dropdown, populate the address
+  // fields in the form.
+  autocomplete.addListener('place_changed', fillInAddress);
+}
+
+// [START region_fillform]
+function fillInAddress() {
+  // Get the place details from the autocomplete object.
+  var place = autocomplete.getPlace();
+
+  for (var component in componentForm) {
+    document.getElementById(component).value = '';
+  }
+
+  // Get each component of the address from the place details
+  // and fill the corresponding field on the form.
+  for (var i = 0; i < place.address_components.length; i++) {
+    var addressType = place.address_components[i].types[0];
+    if (componentForm[addressType]) {
+      var val = place.address_components[i][componentForm[addressType]];
+      document.getElementById(addressType).value = val;
+    }
+  }
+  document.getElementById('loc-adress').value = ''; // make input field clear after selecting  location
+}
+// [END region_fillform]
+
+// [START region_geolocation]
+// Bias the autocomplete object to the user's geographical location,
+// as supplied by the browser's 'navigator.geolocation' object.
+/*
+function geolocate() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var geolocation = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      var circle = new google.maps.Circle({
+        center: geolocation,
+        radius: position.coords.accuracy
+      });
+      autocomplete.setBounds(circle.getBounds());
+    });
+  }
+}
+*/
+// [END region_geolocation]
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDek96259ZILRm-tedWKNL1XFzZ_9TrpfU&signed_in=true&libraries=places&callback=initAutocomplete"
+        async defer></script>
 </body>
 </html>
