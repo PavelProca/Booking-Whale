@@ -46,6 +46,19 @@ label {color: @third-text;}
 	clear: both;
 }
 path, g[id^="arrow_right"] {fill: @third-text;}
+.onpage {
+	& path, & .stepsArrow {fill: @theme-color;}
+	& + .item-name {
+		padding-bottom: 8px;
+		color: @theme-color;
+		border-bottom: 2px solid @theme-color;
+	}
+}
+/*
+	&:first-child {
+		#Group #Shape:first-child {fill: @theme-color;}
+	}
+	*/
 // =================== CONTENT POSITION ===================
 .gwrap { // global wrapper
 	max-width: 1300px;
@@ -122,17 +135,13 @@ path, g[id^="arrow_right"] {fill: @third-text;}
 .smenu-item {
 	text-align: center;
 	color: @third-text;
-	&:first-child {
-		border-bottom: 2px solid @theme-color;
-		color: @theme-color;
-		#Group #Shape:first-child {fill: @theme-color;}
-	}
 	img {width: 24px; height: 24px;}
 	&.separator {
 		img {width: 10px;}
 	}
 	.item-name {margin: 7px 0;}
 }
+
 // =================== ERROR AREA ===================
 .area {
 	display: none;
@@ -152,7 +161,56 @@ path, g[id^="arrow_right"] {fill: @third-text;}
 	}
 }
 .area.error {display: block !important;}
-// =================== USER INFO ===================
+
+// =================== LOCAL ERROR USED IN THE FORM ===================
+.loc-error div {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	white-space: nowrap;
+}
+.loc-error {
+	position: absolute;
+	display: none;
+	float: right;
+	right: 0;
+	bottom: -25px;
+	margin: 0;
+	padding: 0;
+	z-index: 1;
+	& div:first-child {
+		position: absolute;
+		top: -25px;
+		right: 16px;
+		svg {
+			width: 16px;
+			height: 16px;
+			path {fill: @errors;}
+		}
+	}
+	& div:last-child {
+		padding: 8px 12px;
+		box-sizing: border-box;
+		border-radius: 3px;
+		background: @errors;
+		color: #fff;
+		&:after {
+			display: inline-block;
+			position: relative;
+			content: '';
+			width: 0;
+  			height: 0;
+  			top: -21px;
+  			left: -7px;
+  			border-left: 4px solid transparent;
+  			border-right: 4px solid transparent;
+  			border-bottom: 4px solid @errors;
+		}
+	}
+}
+.loc-error.active {display: block;}
+
+// ====================================== LOCATION PAGE STYLES ======================================
 form {
 	div {
 		position: relative;
@@ -195,6 +253,7 @@ form {
 	.bhalf {width: 62%;}
 	.shalf {width: 34%;}
 }
+
 // =================== DROPDOWN ===================
 .mobile-drop {display: none;}
 .dropdown {
@@ -242,6 +301,7 @@ form {
 	}
 }
 // .dropdown.chosen label{border-bottom: 1px solid @theme-color;}
+
 // =================== BUTTONS AREA ===================
 
 .buttons {
@@ -268,13 +328,91 @@ a.back {
 	}
 }
 
-
 .txtr.hidden, .arrow {display: none;}
 .hidden {display: block;}
 
-
-
-
+// ====================================== DATE&TIME PAGE STYLES ======================================
+// TOP PART
+.chose-day {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 40px;
+	padding-bottom: 34px;
+}
+.chose-day .day-wrap {
+	display: block;
+	width: 100%;
+	max-width: 240px;
+	margin: 0 20px;
+	&:first-child, &:last-child {
+		margin: 0;
+	}
+}
+.chose-day .day {
+	display: block;
+	position: relative;
+	padding: 37px 0;
+	text-align: center;
+	border: 1px solid @borders-dividers;
+	border-radius: 5px;
+	cursor: pointer;
+	& h2 {text-transform: uppercase;}
+}
+.day-wrap input[type="radio"] {display: none;}
+.day-wrap input[type="radio"] + label:after {
+	content: " ";
+	display: block;
+	height: 20px;
+	width: 20px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	border: 2px solid @borders-dividers;
+	border-radius: 50%;
+	background: transparent;
+}
+.day-wrap input[type="radio"]:checked + label {
+	background: @theme-color;
+	border-color: @theme-color;
+	color: #fff;
+	& h2 {color: #fff;}
+	& h2 path[id="Shape"] {fill: #fff;}
+}
+.day-wrap input[type="radio"]:checked + label:after {
+	content: "\2713";
+	border-color: #fff;
+}
+// BOTTOM PART
+.chose-time {
+	padding: 14px 0 0 0;
+	overflow: auto;
+}
+.time-wrap {
+	display: block;
+	float: left;
+	text-align: center;
+	width: 11%;
+	min-width: 85px;
+	margin-top: 10px;
+	margin-right: 1.5%;
+	&:nth-child(8) {margin-right: 0;}
+}
+.time-wrap label {
+	display: block;
+	width: 100%;
+	height: 40px;
+	padding: 14px 10px;
+	border: 1px solid @borders-dividers;
+	border-radius: 3px;
+	line-height: 12px;
+	cursor: pointer;
+}
+.time-wrap input[type="radio"] {display: none;}
+.time-wrap input[type="radio"]:checked + label {
+	color: #fff;
+	background: @theme-color;
+	& h4 {color: #fff;}
+}
 
 
 // =================== MOBILE STYLES ===================
@@ -339,55 +477,12 @@ a.back {
 			text-align: center;
 		}
 	}
-
-
-
-
-}
-
-.loc-error div {
-	position: relative;
-	margin: 0;
-	padding: 0;
-	white-space: nowrap;
-}
-.loc-error {
-	position: absolute;
-	display: none;
-	float: right;
-	right: 0;
-	bottom: -25px;
-	margin: 0;
-	padding: 0;
-	z-index: 1;
-	& div:first-child {
-		position: absolute;
-		top: -25px;
-		right: 16px;
-		svg {
-			width: 16px;
-			height: 16px;
-			path {fill: @errors;}
-		}
+	// DATE & TIME STYLES
+	.chose-day {display: block;}
+	.chose-day .day-wrap {
+		width: 100%;
+		max-width: 100%;
+		margin: 10px auto !important;
 	}
-	& div:last-child {
-		padding: 8px 12px;
-		box-sizing: border-box;
-		border-radius: 3px;
-		background: @errors;
-		color: #fff;
-		&:after {
-			display: inline-block;
-			position: relative;
-			content: '';
-			width: 0;
-  			height: 0;
-  			top: -21px;
-  			left: -7px;
-  			border-left: 4px solid transparent;
-  			border-right: 4px solid transparent;
-  			border-bottom: 4px solid @errors;
-		}
-	}
+	.chose-day .day {padding: 20px 0;}
 }
-.loc-error.active {display: block;}

@@ -1,3 +1,4 @@
+// States dropdown
 var i = 0;
 $(function() {
   $('.dropdown ul li').on('click', function() {
@@ -18,10 +19,13 @@ $(function() {
   });
 });
 
+// Upper dropdown on mobile
 function change() {
 	document.getElementById("mob-dropdown1").classList.toggle('hidden');
 	document.getElementById("mob-dropdown2").classList.toggle('hidden');
 }
+
+// Show global error
 function globError() {
   document.getElementById("error-block").classList.toggle('error');
 }
@@ -35,6 +39,13 @@ form.addEventListener("submit", function (event) {
     if (field[i].value == 0) {
       error[i].className = "loc-error active";
       event.preventDefault();
-    }
+    } 
   }
+
 }, false);
+
+/*
+function openNextPage() {
+  window.open("https://www.google.com/", "_blank");
+}
+*/
