@@ -1,15 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!-- CALENDAR WIDGET START -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	<script type="text/javascript" src="datepick/date.js"></script>
+	<script type="text/javascript" src="datepick/jquery.datePicker-2.1.2.js"></script>
+	
+	<!--
+	<script type="text/javascript">
+		$(function()
+{
+	$('.turn-me-into-datepicker')
+		.datePicker({inline:true})
+		.bind(
+			'dateSelected',
+			function(e, selectedDate, $td)
+			{
+				console.log('You selected ' + selectedDate);
+			}
+		);
+});
+	</script>
+	-->
+	<script type="text/javascript">
+		$(function() {
+			$('.calendar')
+			.datePicker({createButton:false})
+			.bind(
+				'click',
+				function() {
+					$(this).dpDisplay();
+					this.blur();
+				}
+			)
+			.bind(
+				'dateSelected',
+				function(e, selectedDate, $td) {
+					console.log(selectedDate);
+					document.getElementsByClassName("other-date")[0].innerHTML = selectedDate;
+				}
+			);
+		});
+	</script>
+	<!-- CALENDAR WIDGET END -->
 	<link rel="stylesheet" type="text/css" href="style.css">
-  <script defer="defer" type="text/javascript" src="scripts/suggestions.js" defer></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDek96259ZILRm-tedWKNL1XFzZ_9TrpfU&signed_in=true&libraries=places&callback=initAutocomplete" defer></script>
-	<script type="text/javascript" src="scripts/jquery-3.1.1.min.js" defer></script>
-  <script defer="defer" type="text/javascript" src="scripts/script.js" defer></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<script defer="defer" type="text/javascript" src="scripts/script.js" defer></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<link rel="stylesheet" type="text/css" href="datepick/datePicker.css">
 	<title>Booking Whale</title>
 </head>
 <body>
+	<div id="datepicker" class="turn-me-into-datepicker"></div>
 	<div class="gwrap">
 		<!--========== HIDDEN MENU THAT APPEARS ON MOBILE ========== -->
 		<div class="header header-hidden">
@@ -279,7 +321,7 @@
 						</div>
 						<div class="day-wrap">
 							<input type="radio" name="day-radio" id="dradio-3">
-							<label for="dradio-3" class="day">
+							<label for="dradio-3" class="day calendar">
 								<h2>
 									<svg width="18px" height="20px" viewBox="0 0 18 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     									<g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -292,7 +334,7 @@
     									</g>
 									</svg>
 								</h2>
-								<p class="date">select other</p>
+								<p class="other-date date">Select other date</p>
 							</label>
 						</div>
 					</div>
