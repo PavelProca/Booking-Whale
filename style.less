@@ -203,7 +203,7 @@ path, g[id^="arrow_right"] {fill: @third-text;}
 .loc-error.active {display: block;}
 
 // ====================================== LOCATION PAGE STYLES ======================================
-form {
+form, #more-info {
 	div {
 		position: relative;
 		padding-top: 18px;
@@ -408,6 +408,39 @@ a.back {
 	& h4 {color: @white;}
 }
 
+// ====================================== VEHICLE PAGE STYLES ======================================
+.veh-type {
+	padding-bottom: 20px;
+	p {
+		padding-top: 20px;
+		color: @primary-text;
+	}
+}
+
+.day-wrap {
+	.veh-bg {
+		display: inline-block;
+		height: 40px;
+		width: 100%;
+	}
+	&:first-child .veh-bg {background: url(vehicles/sedan-default.png) center no-repeat;}
+	&:nth-child(2) .veh-bg {background: url(vehicles/suv-default.png) center no-repeat;}
+	&:last-child .veh-bg {background: url(vehicles/truck-default.png) center no-repeat;}
+	&:first-child input[type="radio"]:checked + label {.veh-bg {background: url(vehicles/sedan-selected.png) center no-repeat;} }
+	&:nth-child(2) input[type="radio"]:checked + label {.veh-bg {background: url(vehicles/suv-selected.png) center no-repeat;} }
+	&:last-child input[type="radio"]:checked + label {.veh-bg {background: url(vehicles/truck-selected.png) center no-repeat;} }
+	& input[type="radio"]:checked + label p {
+		color: @white;
+	}
+}
+
+#more-info {
+	display: flex;
+	justify-content: space-between;
+	div {
+		width: 30%;
+	}
+}
 
 // =================== MOBILE STYLES ===================
 @media only screen and (max-width: 780px) {
@@ -489,5 +522,10 @@ a.back {
 		float: none;
 		width: 30%;
 		margin: 10px 0 0 0;
+	}
+	// VEHICLE PAGE STYLES
+	#more-info {
+		display: block;
+		div {width: 100%;}
 	}
 }
