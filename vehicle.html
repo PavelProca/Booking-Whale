@@ -3,7 +3,6 @@
 <head>
 	<script defer="defer" type="text/javascript" src="scripts/script.js" defer></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="style-2.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>Booking Whale</title>
 </head>
@@ -256,83 +255,50 @@
 						Sorry, we don't serve this area, but we are working on it. We will let you know as soon as we get there!
 					</div>
 				</div>
-				<!-- ========== WASH TYPE AREA ========== -->
-				<h2>Which car wash is best for your vehicle?</h2>
-				<div class="car-wash">
-					<div class="wash-item">
-						<div class="wash-content">
-							<div>
-								<h3>basic hand wash</h3>
-								<h1>$49<sup>99</sup></h1>
-							</div>
-
-							<div class="tk-time">
-								25 min
-							</div>
-
-							<div>
-								<ul>
-									<li>Exterior Hand Wash</li>
-									<li>Towel Hand Dry</li>
-									<li>Wheel Shine</li>
-								</ul>
-							</div>
-							<div>
-								<button class="btn" type="button">Select</button>
-							</div>
+				<!-- ========== VEHICLE AREA ========== -->
+				<div class="info">
+					<!-- ====== VEHICLE TYPE ======-->
+					<h2>What vehicle will we clean?</h2>
+					<div class="chose-day veh-type">
+						<div class="day-wrap">
+							<input type="radio" name="day-radio" id="mradio-1">
+							<label for="mradio-1" class="day">
+								<span class="veh-bg"></span>
+								<p>Sedan</p>
+							</label>
+						</div>
+						<div class="day-wrap">
+							<input type="radio" name="day-radio" id="mradio-2">
+							<label for="mradio-2" class="day">
+								<span class="veh-bg"></span>
+								<p>SUV/Van</p>
+							</label>
+						</div>
+						<div class="day-wrap">
+							<input type="radio" name="day-radio" id="mradio-3">
+							<label for="mradio-3" class="day">
+								<span class="veh-bg"></span>
+								<p>Truck</p>
+							</label>
 						</div>
 					</div>
-					<div class="wash-item">
-						<div class="wash-content">
+					<div class="clear-fix"></div>
+					<!-- ====== MORE INFO ======-->
+					<div>
+						<form id="more-info">
 							<div>
-								<h3>basic hand wash</h3>
-								<h1>$49<sup>99</sup></h1>
-							</div>
-
-							<div class="tk-time">
-								25 min
-							</div>
-
-							<div>
-								<ul>
-									<li>Exterior Hand Wash</li>
-									<li>Towel Hand Dry</li>
-									<li>Wheel Shine</li>
-								</ul>
+								<input type="text" required id="loc-make">
+								<label for="loc-make">Make</label>
 							</div>
 							<div>
-								<button class="btn" type="button">Select</button>
-							</div>
-						</div>
-					</div>
-					<div class="wash-item">
-						<div class="wash-content">
-							<div>
-								<h3>basic hand wash</h3>
-								<h1>$49<sup>99</sup></h1>
-							</div>
-
-							<div class="tk-time">
-								25 min
-							</div>
-
-							<div>
-								<ul>
-									<li>Exterior Hand Wash</li>
-									<li>Towel Hand Dry</li>
-									<li>Wheel Shine</li>
-									<li>Exterior Hand Wash</li>
-									<li>Towel Hand Dry</li>
-									<li>Wheel Shine</li>
-									<li>Exterior Hand Wash</li>
-									<li>Towel Hand Dry</li>
-									<li>Wheel Shine</li>
-								</ul>
+								<input type="text" required id="loc-model">
+								<label for="loc-model">Model</label>
 							</div>
 							<div>
-								<button class="btn" type="button">Select</button>
+								<input type="text" required id="loc-color">
+								<label for="loc-make">Color</label>
 							</div>
-						</div>
+						</form>
 					</div>
 				</div>	
 				<div class="buttons">

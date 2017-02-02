@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@gen-font-family: 'Roboto', sans-serif; // main font
+@theme-color: #0d99b7;
+@errors: #f95446;
+@grey-background: #f6f7f8;
+@borders-dividers: #dadada;
+@warnings: #fed455;
+@success: #a0c263;
+@titles: #000;
+@primary-text: rgba(0, 0, 0, 0.9);
+@secondary-text: rgba(0, 0, 0, 0.6);
+@third-text: rgba(0, 0, 0, 0.4);
+@white: #fff;
+
+
+.car-wash {
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	text-align: center;
+}
+
+.wash-item {
+	width: 30%;
+	border: 1px solid @borders-dividers;
+	border-radius: 4px;
+}
+
+.wash-content {
+	margin: 27px 20px;
+	h3 {
+		text-transform: uppercase;
+		margin-bottom: 20px;
+	}
+	h1 {color: @theme-color;}
+	.tk-time {
+		margin: 12px 0;
+		padding: 12px 0;
+		border: 1px solid @borders-dividers;
+		border-left: 0;
+		border-right: 0;
+		color: @third-text;
+	}
+	ul li {
+		margin-bottom: 10px;
+	}
+}
