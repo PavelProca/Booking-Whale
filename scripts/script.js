@@ -44,8 +44,25 @@ form.addEventListener("submit", function (event) {
 
 }, false);
 
-/*
-function openNextPage() {
-  window.open("https://www.google.com/", "_blank");
+// Show and hide text on service page
+
+function more(num) {
+  if (num == 1) {
+    var text = document.getElementsByClassName("more")[0].innerHTML;
+    document.getElementsByClassName("hidden-text")[0].classList.toggle("show");
+    if (text == "More...") {
+      document.getElementsByClassName("more")[0].innerHTML = "Less...";
+    } else {
+      document.getElementsByClassName("more")[0].innerHTML = "More...";
+    }
+  }
+  else if (num == 2) {
+    var text = document.getElementsByClassName("more")[1].innerHTML;
+    document.getElementsByClassName("hidden-text")[1].classList.toggle("show");
+    if (text == "More...") {
+      document.getElementsByClassName("more")[1].innerHTML = "Less...";
+    } else {
+      document.getElementsByClassName("more")[1].innerHTML = "More...";
+    }
+  }
 }
-*/

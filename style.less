@@ -87,7 +87,7 @@ ul, ol {list-style: none;}
 	}
 }
 .lside, .rside {
-	height: 100vh;
+	min-height: 100vh;
 	float: right;
 }
 .col-cnt {padding-top: 40px;}
@@ -465,10 +465,11 @@ a.back {
 		.col-cnt {margin: 0 20px;}
 	}
 	.lside {
-		height: 100vh;
+		min-height: 100vh;
 		.col-cnt {padding-top: 0;}
 	}
 	.rside {
+			min-height: auto;
 			border-top: 1px solid @borders-dividers;
 			border-bottom: 1px solid @borders-dividers;
 		.col-cnt {

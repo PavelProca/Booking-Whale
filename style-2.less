@@ -20,15 +20,18 @@
 	align-items: stretch;
 	text-align: center;
 }
-
-.wash-item {
-	width: 30%;
-	border: 1px solid @borders-dividers;
-	border-radius: 4px;
+.marginator.add {
+	height: 20px;
 }
 
-.wash-content {
-	margin: 27px 20px;
+.wash-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 30%;
+	padding: 27px 20px;
+	border: 1px solid @borders-dividers;
+	border-radius: 4px;
 	h3 {
 		text-transform: uppercase;
 		margin-bottom: 20px;
@@ -46,3 +49,34 @@
 		margin-bottom: 10px;
 	}
 }
+
+.add-content {
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		border-left: 1px solid @borders-dividers;
+		border-right: 1px solid @borders-dividers;
+	}
+	tr td {
+		text-align: center;
+		padding: 10px 20px;
+		border: 1px solid @borders-dividers;
+		border-left: none; border-right: none;
+		&:first-child {
+			text-align: left;
+			width: 300px;
+		}
+	}
+	.more {
+		display: inline-block;
+		margin-left: 10px;
+		cursor: pointer;
+		color: @theme-color;
+	}
+}
+
+.hidden-text {
+	display: none;
+	margin-top: 10px;
+}
+.hidden-text.show {display: inline-block;}
