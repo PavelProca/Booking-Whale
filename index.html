@@ -174,10 +174,10 @@
 								    </g>
 								</svg>
 							</div>
-							<div class="item-name current-item">Vehicle</div>
+							<div class="item-name">Vehicle</div>
 						</li>
 						<li class="smenu-item separator">
-							<div> <!-- ========== SVG INSERTED ========== -->
+							<div class="onpage"> <!-- ========== SVG INSERTED ========== -->
 								<svg width="8px" height="12px" viewBox="0 0 8 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     								<g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         								<g id="arrow_right_24px" transform="translate(-8.000000, -5.000000)" fill="#000000">
@@ -188,7 +188,7 @@
 							</div>
 						</li>
 						<li class="smenu-item">
-							<div> <!-- ========== SVG INSERTED ========== -->
+							<div class="onpage"> <!-- ========== SVG INSERTED ========== -->
 								<svg width="21px" height="14px" viewBox="0 0 21 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     								<defs>
         								<polygon id="path-1" points="0 0 24 0 24 24 0 24"></polygon>
@@ -206,7 +206,7 @@
     								</g>
 								</svg>
 							</div>
-							<div class="item-name">Service</div>
+							<div class="item-name current-item">Service</div>
 						</li>
 						<li class="smenu-item separator">
 							<div> <!-- ========== SVG INSERTED ========== -->
@@ -257,120 +257,171 @@
 					</div>
 				</div>
 				<!-- ========== WASH TYPE AREA ========== -->
-				<h2>Which car wash is best for your vehicle?</h2>
-				<div class="car-wash">
-					<div class="wash-item">
-						<div>
+				<div class="service-wrap">
+					<h2>Which car wash is best for your vehicle?</h2>
+					<div class="car-wash">
+						<div class="wash-item">
 							<div>
-								<h3>basic hand wash</h3>
-								<h1>$49<sup>99</sup></h1>
-							</div>
+								<div>
+									<h3>basic hand wash</h3>
+									<h1>$49<sup>99</sup></h1>
+								</div>
 
-							<div class="tk-time">
+								<div class="tk-time">
+								<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    								<path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+    								<path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+								</svg>
 								25 min
 							</div>
 
+								<div>
+									<span class="details" onclick="details(1)">Details...</span>
+									<ul class="">
+										<li>Exterior Hand Wash</li>
+										<li>Towel Hand Dry</li>
+										<li>Wheel Shine</li>
+									</ul>
+								</div>
+							</div>
+							<input class="switch" type="radio" id="switch_3_left" name="switch_3" checked/>
+      						<label class="switch btn" for="switch_3_left">Select</label>
+						</div>
+						<div class="wash-item">
+						<div>
 							<div>
+								<h3>deluxe wash</h3>
+								<h1>$64<sup>99</sup></h1>
+							</div>
+
+							<div class="tk-time">
+								<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    								<path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+    								<path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+								</svg>
+								35 min
+							</div>
+
+							<div>
+								<span class="details" onclick="details(2)">Details...</span>
 								<ul>
 									<li>Exterior Hand Wash</li>
 									<li>Towel Hand Dry</li>
 									<li>Wheel Shine</li>
+									<li>Tire Dressing</li>
+									<li>Windows In &#38; Out</li>
+									<li>Sealer Hand Wax</li>
 								</ul>
 							</div>
 						</div>
-						<button class="btn" type="button">Select</button>
-					</div>
-					<div class="wash-item">
+						<input class="switch" type="radio" id="switch_3_center" name="switch_3" />
+      					<label class="switch btn" for="switch_3_center">Select</label>
+						</div>
+						<div class="wash-item">
 						<div>
 							<div>
-								<h3>basic hand wash</h3>
-								<h1>$49<sup>99</sup></h1>
+								<h3>platinum works</h3>
+								<h1>$84<sup>99</sup></h1>
 							</div>
 
 							<div class="tk-time">
-								25 min
+								<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    								<path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+    								<path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+								</svg>
+								50 min
 							</div>
 
 							<div>
+								<span class="details" onclick="details(3)">Details...</span>
 								<ul>
 									<li>Exterior Hand Wash</li>
 									<li>Towel Hand Dry</li>
 									<li>Wheel Shine</li>
-									<li>Exterior Hand Wash</li>
-									<li>Towel Hand Dry</li>
-									<li>Wheel Shine</li>
+									<li>Tire Dressing</li>
+									<li>Windows In &#38; Out</li>
+									<li>Interior Vacuum</li>
+									<li>Door Shuts &#38; Plastics</li>
+									<li>Dashboard Clean</li>
+									<li>Air Freshener</li>
+									<li>Sealer Hand Wax</li>
 								</ul>
 							</div>
 						</div>
-						<button class="btn" type="button">Select</button>
-					</div>
-					<div class="wash-item">
-						<div>
-							<div>
-								<h3>basic hand wash</h3>
-								<h1>$49<sup>99</sup></h1>
-							</div>
-
-							<div class="tk-time">
-								25 min
-							</div>
-
-							<div>
-								<ul>
-									<li>Exterior Hand Wash</li>
-									<li>Towel Hand Dry</li>
-									<li>Wheel Shine</li>
-									<li>Exterior Hand Wash</li>
-									<li>Towel Hand Dry</li>
-									<li>Wheel Shine</li>
-									<li>Exterior Hand Wash</li>
-									<li>Towel Hand Dry</li>
-									<li>Wheel Shine</li>
-								</ul>
-							</div>
+						<input class="switch" type="radio" id="switch_3_right" name="switch_3" />
+      					<label class="switch btn" for="switch_3_right">Select</label>
 						</div>
-						<button class="btn" type="button">Select</button>
 					</div>
-				</div>
-				<div class="marginator add"></div>
-				<div class="clear-fix"></div>
-				<!-- ========== ADD-ONS AREA ========== -->
-				<h2>Add-ons (Additional Services)</h2>
-				<div class="add-ons">
-					<div class="add-content">
-						<table>
-							<tr>
-								<td>Tire Dressing</td>
-								<td>5 min</td>
-								<td>$2.50</td>
-								<td><button type="button" class="btn">Select</button></td>
-							</tr>
-							<tr>
-								<td>
-									Windows In &#38; Out<span class="more" onclick="more(1)">More...</span>
-									<p class="hidden-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
-								</td>
-								<td>5 min</td>
-								<td>$2.50</td>
-								<td><button type="button" class="btn">Select</button></td>
-							</tr>
-							<tr>
-								<td>
-									Tire Dressing<span class="more" onclick="more(2)">More...</span>
-									<p class="hidden-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-									consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-									cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-									proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-								</td>
-								<td>5 min</td>
-								<td>$2.50</td>
-								<td><button type="button" class="btn">Select</button></td>
-							</tr>
-						</table>
+					<div class="marginator add"></div>
+					<div class="clear-fix"></div>
+					<!-- ========== ADD-ONS AREA ========== -->
+					<h2>Add-ons (Additional Services)</h2>
+					<div class="add-ons">
+						<div class="add-content">
+							<table>
+								<tr>
+									<td>Tire Dressing</td>
+									<td class="time-money">
+										<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    										<path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+    										<path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+										</svg>
+										5 min
+									</td>
+									<td class="time-money">$2.50</td>
+									<td class="clear-fix"></td>
+									<td>
+										<input class="switch" type="checkbox" id="switch_3_top" name="switch3" />
+      									<label class="switch btn" for="switch_3_top">Select</label>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Windows In &#38; Out<span class="more" onclick="more(1)">More...</span>
+										<p class="hidden-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+									</td>
+									<td class="time-money">
+										<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    										<path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+    										<path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+										</svg>
+										10 min
+									</td>
+									<td class="time-money">$9.95</td>
+									<td class="clear-fix"></td>
+									<td>
+										<input class="switch" type="checkbox" id="switch_3_middle" name="switch3" />
+      									<label class="switch btn" for="switch_3_middle">Select</label>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										Interior Vacuum<span class="more" onclick="more(2)">More...</span>
+										<p class="hidden-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+									</td>
+									<td class="time-money">
+										<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    										<path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+    										<path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+										</svg>
+										15 min
+									</td>
+									<td class="time-money">$5.45</td>
+									<td class="clear-fix"></td>
+									<td>
+										<input class="switch" type="checkbox" id="switch_3_bottom" name="switch3" />
+      									<label class="switch btn" for="switch_3_bottom">Select</label>
+									</td>
+								</tr>
+							</table>
+						</div>
 					</div>
 				</div>
 				<div class="buttons">

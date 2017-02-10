@@ -13,15 +13,37 @@
 @third-text: rgba(0, 0, 0, 0.4);
 @white: #fff;
 
+.service-wrap {
+	.btn {
+		color: @primary-text;
+		background: @white;
+		border-color: @borders-dividers;
+	}
+	.more, .details {
+		display: inline-block;
+		margin-left: 10px;
+		cursor: pointer;
+		color: @theme-color;
+	}
+	.details {display: none;}
+	svg {
+			position: relative;
+			top: 2px;
+			width: 14px;
+			height: auto;
+		}
+	path {fill: @third-text;}
+}
 
 .car-wash {
 	display: flex;
 	justify-content: space-between;
 	align-items: stretch;
+	margin-top: 23px;
 	text-align: center;
 }
 .marginator.add {
-	height: 20px;
+	height: 35px;
 }
 
 .wash-item {
@@ -29,7 +51,7 @@
 	flex-direction: column;
 	justify-content: space-between;
 	width: 30%;
-	padding: 27px 20px;
+	padding: 20px;
 	border: 1px solid @borders-dividers;
 	border-radius: 4px;
 	h3 {
@@ -50,28 +72,47 @@
 	}
 }
 
+input.switch {display: none;}
+
+td label.switch{width: 140px;}
+
+label.switch {
+	display: inline-block;
+	background-color: @white;
+	color: @primary-text;
+	cursor: pointer;
+	font-size: 14px;
+	line-height: 50px;
+	text-align: center;
+	transition: all 0.1s ease-in-out;
+}
+
+input.switch:checked + label.switch {
+	color: @white;
+	background-color: @theme-color;
+	border-color: @theme-color;
+}
+
+input.switch:checked + label.switch:after {content: 'ed';}
+
 .add-content {
 	table {
 		width: 100%;
 		border-collapse: collapse;
 		border-left: 1px solid @borders-dividers;
 		border-right: 1px solid @borders-dividers;
+		margin-top: 27px;
 	}
 	tr td {
 		text-align: center;
-		padding: 10px 20px;
+		padding: 14px 20px;
 		border: 1px solid @borders-dividers;
 		border-left: none; border-right: none;
+		&.clear-fix {display: none;}
 		&:first-child {
 			text-align: left;
-			width: 300px;
+			width: 394px;
 		}
-	}
-	.more {
-		display: inline-block;
-		margin-left: 10px;
-		cursor: pointer;
-		color: @theme-color;
 	}
 }
 
@@ -79,4 +120,53 @@
 	display: none;
 	margin-top: 10px;
 }
+
 .hidden-text.show {display: inline-block;}
+
+.time-money {
+	min-width: 66px;
+	color: @third-text;
+	svg {
+		text-align: left;
+	}
+}
+
+@media only screen and (max-width: 780px) {
+	.car-wash {display: block;}
+	.wash-item {
+		width: 100%;
+		margin-bottom: 20px;
+		ul {display: none;}
+		ul.show {display: block;}
+		.details {
+			display: inline-block;
+			margin-bottom: 10px;
+		}
+	}
+
+	.add-content {
+		table {
+			border: none;
+		tr {
+			display: block;
+			margin-bottom: 20px;
+			padding: 10px;
+			border: 1px solid @borders-dividers;
+			border-radius: 4px;
+			td.clear-fix {display: block;}
+		}
+			tr td, tr td:first-child {
+				width: 100%;
+				display: block;
+				text-align: center;
+				border: none;
+				padding: 0;
+			}
+		}
+		tr td.time-money {
+			float: left;
+			width: 50%;
+			margin: 10px 0;
+		}
+	}
+}
