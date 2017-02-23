@@ -130,6 +130,108 @@ input.switch:checked + label.switch:after {content: 'ed';}
 		text-align: left;
 	}
 }
+// ===================================================================
+.first-part, .second-part {
+	padding-top: 0;
+	margin-left: 20px;
+	.radio-button {
+		padding: 0;
+		margin: 0;
+		position: absolute;
+		top: 25px;
+		left: -24px;
+		&.rad2 {top: 17px;}
+		input {display: none;}
+		label {
+			display: block;
+			width: 18px;
+			height: 18px;
+			background: @white;
+			border: 2px solid @borders-dividers;
+			border-radius: 50%;
+			span {
+				display: none;
+				margin: 2px auto;
+				width: 10px;
+				height: 10px;
+				border-radius: 50%;
+				background: @theme-color;
+			}
+		}
+		input[type="radio"]:checked + label {
+			border-color: @theme-color;
+			span {display: block;}
+		}
+	}
+}
+
+.first-part {
+	margin-bottom: 46px;
+	.dropdown, .code {
+		display: inline-block;
+		max-width: 140px;
+		width: 100%;
+		margin-right: 20px;
+		&:last-child {margin-right: 0;}
+	}
+	img {
+		position: relative;
+		top: 8px;
+		left: 8px;
+	}
+	.marginator {
+		height: 24px;
+	}
+}
+
+.card-details {
+	width: 45%;
+	float: left;
+	margin-right: 5%;
+	&.none {margin-right: 0;}
+}
+// ===================================================================
+.order-details {
+	margin-top: 26px;
+	.txtl {
+		width: 70%;
+		span {color: @secondary-text;}
+		svg {
+			position: relative;
+			top: 3px;
+			left: 0;
+			width: 21px;
+			height: 14px;
+			margin-right: 10px;
+			path {fill: @primary-text;}
+		}
+	}
+	.txtr {
+		width: 30%;
+		text-align: right;
+		svg {
+			width: 16px;
+			height: 16px;
+			position: relative;
+			top: 3px;
+			left: 0;
+			path {fill: @theme-color;}
+		}
+	}
+	.block {
+		padding-bottom: 40px;
+		border-bottom: 1px solid @borders-dividers;
+		&:last-child {margin: 16px 0;}
+	}
+	.row {
+		margin: 0 0 13px 0;
+		&:last-child {margin: 0;}
+		span {
+			display: block;
+			margin-left: 34px;
+		}
+	}
+}
 
 @media only screen and (max-width: 780px) {
 	.car-wash {display: block;}
