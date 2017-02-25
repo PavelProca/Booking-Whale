@@ -163,6 +163,15 @@ input.switch:checked + label.switch:after {content: 'ed';}
 			span {display: block;}
 		}
 	}
+	.card {
+		position: absolute;
+		top: 20px;
+		right: 0;
+	}
+	.dropdown ul {
+		max-height: 136px;
+		overflow: auto;
+	}
 }
 
 .first-part {
@@ -189,6 +198,10 @@ input.switch:checked + label.switch:after {content: 'ed';}
 	float: left;
 	margin-right: 5%;
 	&.none {margin-right: 0;}
+	.special {
+		padding: 25px 24px 25px 0;
+		box-sizing: border-box;
+	}
 }
 // ===================================================================
 .order-details {
@@ -200,7 +213,7 @@ input.switch:checked + label.switch:after {content: 'ed';}
 			position: relative;
 			top: 3px;
 			left: 0;
-			width: 21px;
+			min-width: 21px;
 			height: 14px;
 			margin-right: 10px;
 			path {fill: @primary-text;}
@@ -221,17 +234,24 @@ input.switch:checked + label.switch:after {content: 'ed';}
 	.block {
 		padding-bottom: 40px;
 		border-bottom: 1px solid @borders-dividers;
-		&:last-child {margin: 16px 0;}
+		&:last-child {
+			margin: 16px 0;
+			padding-bottom: 20px;
+		}
 	}
 	.row {
 		margin: 0 0 13px 0;
+		.txtl {display: flex;}
 		&:last-child {margin: 0;}
-		span {
-			display: block;
-			margin-left: 34px;
-		}
 	}
 }
+
+.warn {
+	font-size: 12px;
+	line-height: 17px;
+}
+
+.basic {margin-bottom: 5px;}
 
 @media only screen and (max-width: 780px) {
 	.car-wash {display: block;}
@@ -270,5 +290,17 @@ input.switch:checked + label.switch:after {content: 'ed';}
 			width: 50%;
 			margin: 10px 0;
 		}
+	}
+	.first-part {
+		.card-details {
+			width: 100%;
+			clear: both;
+			margin-right: 0;
+		}
+		.dropdown, .code {
+			width: 40%;
+			margin-right: 0;
+		}
+		.marg {margin-right: 10%;}
 	}
 }
