@@ -208,7 +208,7 @@ form, #more-info {
 		position: relative;
 		padding-top: 18px;
 	}
-	input, .dropdown.mobile-drop {
+	input, textarea, .dropdown.mobile-drop {
 		width: 100%;
 		height: 10px;
 		padding: 20px 0;
@@ -244,6 +244,13 @@ form, #more-info {
 	.marginator {width: 4%; height: 10px;}
 	.bhalf {width: 62%;}
 	.shalf {width: 34%;}
+	textarea {
+		height: auto;
+		box-sizing: border-box;
+		padding-top: 0;
+		margin-top: 20px;
+		resize: none;
+	}
 }
 
 // =================== DROPDOWN ===================
@@ -309,7 +316,7 @@ form, #more-info {
 
 .btn {
 	width: 100%;
-	height: 50px;
+	min-height: 50px;
     border-radius: 50px;
     background-color: @theme-color;
     border: 1px solid @theme-color;
@@ -317,6 +324,11 @@ form, #more-info {
     outline: none;
     color: @white;
     font-size: 21px;
+    path {fill: @white;}
+    svg {
+    	position: relative;
+    	top: 3px;
+    }
 }
 
 a.back {

@@ -72,3 +72,10 @@ function details(num) {
   else if (num == 2) {document.getElementsByTagName("ul")[2].classList.toggle("show");}
   else if (num == 3) {document.getElementsByTagName("ul")[3].classList.toggle("show");}
 }
+
+function hideform() {
+  document.getElementsByClassName("cardpart")[0].classList.toggle("hidden");
+}
+function showform() {
+  document.getElementsByClassName("cardpart")[0].classList.toggle("hidden");
+}

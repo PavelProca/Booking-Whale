@@ -131,7 +131,7 @@ input.switch:checked + label.switch:after {content: 'ed';}
 	}
 }
 // ===================================================================
-.first-part, .second-part {
+.first-part {
 	padding-top: 0;
 	margin-left: 20px;
 	.radio-button {
@@ -171,18 +171,36 @@ input.switch:checked + label.switch:after {content: 'ed';}
 	.dropdown ul {
 		max-height: 136px;
 		overflow: auto;
+		box-shadow: 0px 3px 10px @theme-color;
 	}
 }
 
 .first-part {
 	margin-bottom: 46px;
+	.cardpart {
+		margin: 0;
+		padding: 0;
+		&.hidden {display: none;}
+	}
 	.dropdown, .code {
 		display: inline-block;
 		max-width: 140px;
 		width: 100%;
 		margin-right: 20px;
 		&:last-child {margin-right: 0;}
-	}
+	}/*
+	.bubble {
+		width: 20px;
+		height: 20px;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		top: 1px;
+		right: 1px;
+		border: 2px solid @theme-color;
+		border-radius: 50%;
+		text-align: center;
+	} */
 	img {
 		position: relative;
 		top: 8px;
@@ -298,9 +316,11 @@ input.switch:checked + label.switch:after {content: 'ed';}
 			margin-right: 0;
 		}
 		.dropdown, .code {
-			width: 40%;
+			width: 45%;
+			max-width: none;
 			margin-right: 0;
 		}
-		.marg {margin-right: 10%;}
+		.code {display: block;}
+		.marg {margin-right: 8.5%;}
 	}
 }

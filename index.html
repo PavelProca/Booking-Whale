@@ -432,10 +432,11 @@
 							<div>
 								<div class="radio-button">
 									<input type="radio" name="one-type" id="first" checked>
-									<label for="first"><span></span></label>
+									<label for="first" onClick="showform()"><span></span></label>
 								</div>
 							</div>
 							<p>We accept all major credit and debit cards: <img src="images/Mastercard.png"></p>
+							<div class="cardpart">
 							<div class="card-details">
 								<input type="text" id="loc-cname" required autocomplete="off">
 								<label for="loc-cname">Name on Card</label>
@@ -509,11 +510,12 @@
 								<input type="text" id="loc-cv" required autocomplete="off" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
 								<label for="loc-cv">CVV Code</label>
 							</div>
+							</div>
 							<div class="marginator"></div>
 							<div>
 								<div class="radio-button rad2">
 									<input type="radio" name="one-type" id="second">
-									<label for="second"><span></span></label>
+									<label for="second" onClick="hideform()"><span></span></label>
 								</div>
 							</div>
 							<p>I would like to pay in person after my carwash is done</p>
@@ -530,7 +532,7 @@
 								<label for="loc-phone">Phone Number <span class="req">*</span></label>
 							</div>
 							<div>
-								<input type="text" id="loc-comment" required autocomplete="off">
+								<textarea type="text" id="loc-comment" required autocomplete="off" ></textarea>
 								<label for="loc-comment">Comments</label>
 							</div>
 						</div>
@@ -543,7 +545,12 @@
 					</div>
 					<div class="clear-fix"></div>
 					<div class="align-right">
-						<button class="btn" type="submit" form="info">Confirm Booking</button>
+						<button class="btn" type="submit" form="info">
+							<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+						    	<path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+							</svg>
+							Confirm Booking
+						</button>
 						<p class="warn">
 							By clicking "Confirm Booking", I acknowledge<br>
 							<a href="#">this disclaimer regarding availibility</a>
