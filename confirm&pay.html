@@ -69,7 +69,7 @@
         										</g>
     										</g>
 										</svg>
-										<div>2302 Polk, San Francisco, CA 94109</div>
+										2302 Polk, San Francisco, CA 94109
 									</div>
 									<div class="txtr">
 										<a href="#">
@@ -171,8 +171,12 @@
         										</g>
     										</g>
 										</svg>
-										Basic Car Wash<br>
-										<span>Add-ons: Tire Dressing, Windows In &#38; Out, Interior Vacuum</span>
+										<div>
+											<p class="basic">
+												Basic Car Wash<br>
+											</p>
+											<span>Add-ons: Tire Dressing, Windows In &#38; Out, Interior Vacuum</span>
+										</div>
 									</div>
 									<div class="txtr">
 										<a href="#">
@@ -428,20 +432,35 @@
 							<div>
 								<div class="radio-button">
 									<input type="radio" name="one-type" id="first" checked>
-									<label for="first"><span></span></label>
+									<label for="first" onClick="showform()"><span></span></label>
 								</div>
 							</div>
-							<p>We accept all major credit and debit cards: <img src="images/mastercard.png"></p>
+							<p>We accept all major credit and debit cards: <img src="images/Mastercard.png"></p>
+							<div class="cardpart">
 							<div class="card-details">
 								<input type="text" id="loc-cname" required autocomplete="off">
 								<label for="loc-cname">Name on Card</label>
 							</div>
 							<div class="card-details none">
-								<input type="text" id="loc-cnumber" required autocomplete="off" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-								<label for="loc-cnumber">Card Number</label>
+								<input type="text" id="loc-cnumber" required autocomplete="off" class="specia" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+								<label for="loc-cnumber">
+									Card Number
+								</label>
+								<div class="card">
+									<svg width="20px" height="16px" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    									<g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        									<g id="credit_card_24px" transform="translate(-2.000000, -4.000000)">
+            									<g id="Group">
+                									<path d="M20,4 L4,4 C2.89,4 2.01,4.89 2.01,6 L2,18 C2,19.11 2.89,20 4,20 L20,20 C21.11,20 22,19.11 22,18 L22,6 C22,4.89 21.11,4 20,4 L20,4 Z M20,18 L4,18 L4,12 L20,12 L20,18 L20,18 Z M20,8 L4,8 L4,6 L20,6 L20,8 L20,8 Z" id="Shape" fill="#000000"></path>
+                									<polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+            									</g>
+        									</g>
+    									</g>
+									</svg>
+								</div>
 							</div>
 							<div class="clear-fix"></div>
-							<div class="dropdown" id="statedrop" onClick="showdrop()">
+							<div class="dropdown marg" id="statedrop" onClick="showdrop()">
 								<label id="administrative_area_level_1" data-value="" disabled="true">MM</label>
 								<ul>
 									<li data-value="1">01</li>
@@ -491,11 +510,19 @@
 								<input type="text" id="loc-cv" required autocomplete="off" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
 								<label for="loc-cv">CVV Code</label>
 							</div>
+							<div class="bubble">
+								?
+								<div class="bubble-text">
+									<p>This security code is the last 3 digits on the back of your Visa, MasterCard or Discover card.</p>
+									<p>The security code on American Express cards is the 4 digit number on the front of your card above your account number.</p>
+								</div>
+							</div>
+							</div>
 							<div class="marginator"></div>
 							<div>
 								<div class="radio-button rad2">
 									<input type="radio" name="one-type" id="second">
-									<label for="second"><span></span></label>
+									<label for="second" onClick="hideform()"><span></span></label>
 								</div>
 							</div>
 							<p>I would like to pay in person after my carwash is done</p>
@@ -512,7 +539,7 @@
 								<label for="loc-phone">Phone Number <span class="req">*</span></label>
 							</div>
 							<div>
-								<input type="text" id="loc-comment" required autocomplete="off">
+								<textarea type="text" id="loc-comment" required autocomplete="off" ></textarea>
 								<label for="loc-comment">Comments</label>
 							</div>
 						</div>
@@ -521,7 +548,20 @@
 				</div>
 				<div class="buttons">
 					<div class="align-right">
-						<button class="btn" type="submit" form="info">Next</button>
+						<h2>Total: $68.07</h2>
+					</div>
+					<div class="clear-fix"></div>
+					<div class="align-right">
+						<button class="btn" type="submit" form="info">
+							<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+						    	<path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+							</svg>
+							Confirm Booking
+						</button>
+						<p class="warn">
+							By clicking "Confirm Booking", I acknowledge<br>
+							<a href="#">this disclaimer regarding availibility</a>
+						</p>
 					</div>
 					<div class="align-left">
 						<p>
@@ -536,7 +576,7 @@
         								</g>
     								</g>
 								</svg>
-								Login
+								Service
 							</a>
 						</p>
 					</div>
