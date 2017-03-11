@@ -367,8 +367,8 @@ a.back {
 	cursor: pointer;
 	& h2 {text-transform: uppercase;}
 }
-.day-wrap input[type="radio"] {display: none;}
-.day-wrap input[type="radio"] + label:after {
+.day-wrap input[type="radio"], .adds input[type="radio"] {display: none;}
+.day-wrap input[type="radio"] + label:after, .adds input[type="radio"] + label:after {
 	content: " ";
 	display: block;
 	height: 20px;
@@ -380,17 +380,18 @@ a.back {
 	border-radius: 50%;
 	background: transparent;
 }
-.day-wrap input[type="radio"]:checked + label {
+.day-wrap input[type="radio"]:checked + label, .adds input[type="radio"]:checked + label{
 	background: @theme-color;
 	border-color: @theme-color;
 	color: @white;
 	& h2 {color: @white;}
 	& h2 path[id="Shape"] {fill: @white;}
 }
-.day-wrap input[type="radio"]:checked + label:after {
+.day-wrap input[type="radio"]:checked + label:after, .adds input[type="radio"]:checked + label:after {
 	content: "\2713";
 	border-color: @white;
 }
+.adds {position: relative;}
 // BOTTOM PART
 .chose-time {
 	padding: 10px 0 0 0;
