@@ -79,3 +79,14 @@ function hideform() {
 function showform() {
   document.getElementsByClassName("cardpart")[0].classList.toggle("hidden");
 }
+
+function chek(something) {
+  if (something == 0) {
+    document.getElementsByClassName("add-content")[0].classList.toggle("active");
+  } else if (something == 1) {
+    document.getElementsByClassName("add-content")[1].classList.toggle("active");
+  }
+  else if (something == 2) {
+    document.getElementsByClassName("add-content")[2].classList.toggle("active");
+  }
+}

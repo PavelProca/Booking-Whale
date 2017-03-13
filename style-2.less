@@ -40,13 +40,8 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: stretch !important;
-	margin-top: 23px;
 	text-align: center;
 }
-.marginator.add {
-	height: 35px;
-}
-
 .wash-item {
 	display: flex;
 	flex-direction: column;
@@ -74,17 +69,24 @@
 	height: 100%;
 	color: @primary-text;
 }
-.day-wrap:hover input[type=radio] + label {border: 1px solid @theme-color;}
+.add-ons label {color: @primary-text;}
+.day-wrap:hover input[type="radio"] + label, .add-ons label:hover .add-content {border: 1px solid @theme-color;}
 
-.day-wrap input[type=radio]:checked+label {
+.day-wrap input[type="radio"]:checked+label {
 	background: @white;
 	color: @primary-text;
 	border: 2px solid @theme-color;
 }
+.add-content.active {
+	background: @white !important;
+	color: @primary-text !important;
+	border: 2px solid @theme-color !important;
+}
 
-.day-wrap input[type=radio]:checked+label:after, .adds input[type=radio]:checked+label:after {
+.day-wrap input[type="radio"]:checked+label:after, .adds input[type="checkbox"]:checked+label:after {
+	content: "";
 	border-color: @theme-color;
-	background: @theme-color;
+	background: @theme-color url(SVG/check_mark.svg) center no-repeat;
 	color: @white;
 	text-align: center;
 }
@@ -109,8 +111,6 @@ input.switch:checked + label.switch {
 	background-color: @theme-color;
 	border-color: @theme-color;
 }
-
-input.switch:checked + label.switch:after {content: 'ed';}
 
 .hidden-text {
 	display: none;
@@ -310,7 +310,7 @@ input.switch:checked + label.switch:after {content: 'ed';}
 		margin-left: 0;
 	}
 	& div {margin-left: 15px}
-	.adds input[type="radio"] + label:after {
+	.adds input[type="checkbox"] + label:after {
 		position: static;
 		float: right;
 	}
