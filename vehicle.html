@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script defer="defer" type="text/javascript" src="scripts/jquery-3.1.1.min.js" defer></script>
 	<script defer="defer" type="text/javascript" src="scripts/script.js" defer></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -256,52 +257,140 @@
 					</div>
 				</div>
 				<!-- ========== VEHICLE AREA ========== -->
-				<div class="info">
-					<!-- ====== VEHICLE TYPE ======-->
-					<h2>What vehicle will we clean?</h2>
-					<div class="chose-day veh-type">
-						<div class="day-wrap">
-							<input type="radio" name="day-radio" id="mradio-1">
-							<label for="mradio-1" class="day">
-								<span class="veh-bg"></span>
-								<p>Sedan</p>
-							</label>
+				<div class="info-wrapper">
+					<!-- =============== CLONE BLOCK =============== -->
+					<div class="info hidden" id="clone">
+						<!-- ====== VEHICLE TYPE ======-->
+						<h2>What vehicle will we clean?</h2>
+						<div class="chose-day veh-type">
+							<div class="day-wrap">
+								<input type="radio" name="day-radio" id="" class="type-block">
+								<label for="" class="day">
+									<span class="veh-bg"></span>
+									<p>Sedan</p>
+									<select class="qty">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+									</select>
+								</label>
+							</div>
+							<div class="day-wrap">
+								<input type="radio" name="day-radio" id="" class="type-block">
+								<label for="" class="day">
+									<span class="veh-bg"></span>
+									<p>SUV/Van</p>
+									<select class="qty">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+									</select>
+								</label>
+							</div>
+							<div class="day-wrap">
+								<input type="radio" name="day-radio" id="" class="type-block">
+								<label for="" class="day">
+									<span class="veh-bg"></span>
+									<p>Truck</p>
+									<select class="qty">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+									</select>
+								</label>
+							</div>
 						</div>
-						<div class="day-wrap">
-							<input type="radio" name="day-radio" id="mradio-2">
-							<label for="mradio-2" class="day">
-								<span class="veh-bg"></span>
-								<p>SUV/Van</p>
-							</label>
-						</div>
-						<div class="day-wrap">
-							<input type="radio" name="day-radio" id="mradio-3">
-							<label for="mradio-3" class="day">
-								<span class="veh-bg"></span>
-								<p>Truck</p>
-							</label>
+						<div class="clear-fix"></div>
+						<!-- ====== MORE INFO ======-->
+						<div>
+							<form id="more-info">
+								<div>
+									<input type="text" required>
+									<label for="loc-make">Make</label>
+								</div>
+								<div>
+									<input type="text" required>
+									<label for="loc-model">Model</label>
+								</div>
+								<div>
+									<input type="text" required>
+									<label for="loc-make">Color</label>
+								</div>
+							</form>
 						</div>
 					</div>
-					<div class="clear-fix"></div>
-					<!-- ====== MORE INFO ======-->
-					<div>
-						<form id="more-info">
-							<div>
-								<input type="text" required id="loc-make">
-								<label for="loc-make">Make</label>
+					<!-- =============== END OF CLONE BLOCK =============== -->
+					<div class="info">
+						<!-- ====== VEHICLE TYPE ======-->
+						<h2>What vehicle will we clean?</h2>
+						<div class="chose-day veh-type">
+							<div class="day-wrap">
+								<input type="radio" name="day-radio" id="mradio-1" class="type-block">
+								<label for="mradio-1" class="day">
+									<span class="veh-bg"></span>
+									<p>Sedan</p>
+									<select class="qty">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+									</select>
+								</label>
 							</div>
-							<div>
-								<input type="text" required id="loc-model">
-								<label for="loc-model">Model</label>
+							<div class="day-wrap">
+								<input type="radio" name="day-radio" id="mradio-2" class="type-block">
+								<label for="mradio-2" class="day">
+									<span class="veh-bg"></span>
+									<p>SUV/Van</p>
+									<select class="qty">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+									</select>
+								</label>
 							</div>
-							<div>
-								<input type="text" required id="loc-color">
-								<label for="loc-make">Color</label>
+							<div class="day-wrap">
+								<input type="radio" name="day-radio" id="mradio-3" class="type-block">
+								<label for="mradio-3" class="day">
+									<span class="veh-bg"></span>
+									<p>Truck</p>
+									<select class="qty">
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+									</select>
+								</label>
 							</div>
-						</form>
+						</div>
+						<div class="clear-fix"></div>
+						<!-- ====== MORE INFO ======-->
+						<div>
+							<form id="more-info">
+								<div>
+									<input type="text" required id="loc-make">
+									<label for="loc-make">Make</label>
+								</div>
+								<div>
+									<input type="text" required id="loc-model">
+									<label for="loc-model">Model</label>
+								</div>
+								<div>
+									<input type="text" required id="loc-color">
+									<label for="loc-make">Color</label>
+								</div>
+							</form>
+						</div>
 					</div>
-				</div>	
+				</div>
 				<div class="buttons">
+					<div>
+						<button onClick="addBlock()">Add block</button>
+					</div>
 					<div class="align-right">
 						<button class="btn" type="submit" form="info">Next</button>
 					</div>
@@ -328,4 +417,39 @@
 		</div>
 	</div>
 </body>
+<script type="text/javascript">
+	function addBlock () {
+		var cloneBlock = $('#clone').clone(); // clone block
+		$(cloneBlock).removeClass('hidden'); // remove hidden class
+		cloneBlock.appendTo(".info-wrapper"); // insert cloned block
+		// set the right ID to all elements
+		debugger;
+		var counter = 0;
+		var child1 = document.getElementsByClassName("type-block");
+		var child2 = document.getElementsByClassName("day");
+		for (var i = 0; i < child1.length; i++) {
+			child1[i].id = 'mradio-' + counter;
+			child2[i].setAttribute("for", 'mradio-' + counter);
+			counter = counter + 1;
+		}
+		// set different block names
+		var blocks = document.getElementsByClassName("chose-day");
+		var counter2 = 0;
+		for (var i = 0; i < blocks.length; i++) {
+			for (var z = 0; z < blocks[i].children.length; z++) {
+				blocks[i].children[z].children[0].name = "day-radio" + counter2;
+			}
+			counter2 = counter2 + 1;
+		}
+	}
+</script>
 </html>
+
+
+
+
+
+
+
+
+
